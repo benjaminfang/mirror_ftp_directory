@@ -49,7 +49,7 @@ def download_dir_tree(ftpob,parent_node,dir_local,re_tmp,d_hide):
             #print(child_node)
             if d_hide=='F' and child_node[0]=='.': continue
             if node_type=='OS.unix=symlink':
-                node_type=get_link_type(ftpob,os.path.join(parent_dir,child_node))
+                node_type=get_link_type(ftpob,os.path.join(parent_node,child_node))
             if node_type=='file':
                 if re_tmp.match(child_node):
                     f_out=open(os.path.join(dir_local,child_node),'wb')
